@@ -1,0 +1,12 @@
+0=ok button
+1=ok/cancel button
+2=abort /retry /ignore button
+3=yes/no/cancel button
+4=yes/no button
+5=retry/cancel button
+
+below is the meaning each number:
+16=critical icon
+32=help icon
+48=warning icon
+64=information icon

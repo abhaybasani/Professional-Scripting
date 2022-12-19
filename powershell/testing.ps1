@@ -436,4 +436,53 @@ $b
 
 #-------------  Enviroment Variable  ---------------
 
+#For check Enviroment Variable goto:
+					#1- this PC 
+					#2-Properties
+					#3-Advanced System Setting
+					#4-Click on Enviroment Variable
+					
+>ping google.com
+ 
+#list the Enviroment Variable using PowerShell
+>dir env:
 
+#For check enviroment Path
+>$env:Path
+#For check username in env
+>$env:USERNAME
+#for get hostname in env
+>$env:COMPUTERNAME
+
+##--------------   Loops in PowerShell  -----------------
+#on powerShell ISE
+
+#For loops in powershell
+For($i=0;$i -le 20;$i++){
+	write $i
+};
+
+#While Loops
+i=30
+While($i -lt 30){
+	write $i
+	$i++
+};
+
+#if else condition in python
+$a=22
+if($a -lt 30){
+	write "a is less than 10"
+}
+elseif($a -eq 20){
+	write "a is equal to 20"
+}
+esle{
+	write "a is greater than 20"
+};
+
+foreach($i in get-process){
+	write $i.name
+	write $i.path
+	write $i.id
+};

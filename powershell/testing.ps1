@@ -195,6 +195,15 @@ Install-ADDSForest `
 #Get details about OU
 >Get-ADOrganizationalUnit -Identity "ou=technical, dc=itsupport, dc=com"
 
+#Remove a Organizational Unit in PowerShell
+>Remove -ADOrganizationalUnit -Identity "ou=account, dc=itsupport, dc=com" -ProtectedFromAccidentalDeletion:$false
+
+>Remove -ADOrganizationalUnit -Identity "ou=account, dc=itsupport, dc=com"
+
+#get Log Details
+
+>Get-EventLog -LogName 'DNS Server' -Newest 3
+
 #Get info about your system
 >wmic
 wmic:root\cli>cpu
@@ -486,3 +495,47 @@ foreach($i in get-process){
 	write $i.path
 	write $i.id
 };
+
+#----------- Arrays --------------
+$a=@(50,60,70)
+
+#indexing in powershell
+$a[1]
+$a[2]
+
+#functions in powershell array
+$a.Count
+
+#if you want add items on the list 
+$a.Add(80)
+$a.Add(55)
+$a
+
+#Change array type to array list
+[System.Collection.ArrayList]$b=@(50,38,22,60)
+$b.Add(80)
+$b
+
+#insert a value in array in PowerShell
+$b.insert(1,88)
+$b
+
+#Remove a item from the list
+$b.remove(38)
+$b
+
+#--------    -----------
+[System.Collection.ArrayList]$c=@(54,55,60)
+
+$b[0]=100
+for($i=0;$i -lt $b.count;$i++)
+{
+	write $b[$i]
+}
+
+foreach($i in $b){
+	write $id
+}
+
+#find the index of a array
+$b.IndexOf(55)
